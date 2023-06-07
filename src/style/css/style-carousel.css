@@ -1,14 +1,15 @@
-
-
+@font-face {
+  font-family: Sansation;
+  src: url(../../../assets/font/sansation/Sansation_Bold.ttf);
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: Sansation;
 }
-.carousel-main {
+.carousel-container {
   position: relative;
-  
   padding-top: 5rem;
   width: 100%;
   display: flex;
@@ -87,19 +88,24 @@
   list-style: none;
   background: #DD58D6;
   cursor: pointer;
+  overflow: hidden;
   padding-bottom: 15px;
   flex-direction: column;
   border-radius: 8px;
 }
 .carousel .card .img {
+  
   background: #8426A6;
   height: 50%;
   width: 100%;
 }
 .card .img img {
+  height: 180px;
+  width: 90%;
   position: absolute;
+  top: 3rem;
   z-index: 1;
-  object-fit: cover;
+  object-fit: contain;
 }
 .carousel .card h2 {
   font-weight: 500;
@@ -118,4 +124,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .wrapper .carousel 
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+}
