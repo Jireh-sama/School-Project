@@ -93,6 +93,10 @@
   flex-direction: column;
   border-radius: 8px;
 }
+#btn-itemName-adobo {
+  padding: .2rem 2.4rem;
+  border-radius: 40px;
+}
 .carousel .card .img {
   
   background: #8426A6;
