@@ -1,0 +1,122 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../../../assets/font/montserrat/Montserrat-Bold.otf);
+}
+@font-face {
+    font-family: Sansation;
+    src: url(../../../assets/font/sansation/Sansation_Bold.ttf);
+}
+@font-face {
+    font-family: Sansation-light;
+    src: url(../../../assets/font/sansation/Sansation_Light.ttf);
+}
+:root{
+    --backgroundColor: #40128B;
+    --primaryColor: #9336B4;
+    --secondaryColor: #8426A6;
+    --minColor: #DD58D6;
+}
+body {
+    background-color: var(--backgroundColor);
+    height: 100vh;
+}
+main {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--backgroundColor);
+    color: white;
+}
+header {
+    font-family: Montserrat;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem 1rem;
+    color: #FFE79B;
+    width: 100%;
+}
+header .header-text {
+    font-size: 3.2rem;
+    width: 500px;
+}
+header .header-image img {
+    height: auto;
+    width: 400px;
+}
+
+.wave-bg {
+    position: absolute;
+    top: -75%;
+    height: 200px;
+    width: 100%;
+}
+.wave-shadow-bg {
+    position: absolute;
+    top: -90%;
+    height: 200px;
+    width: 100%;
+    z-index: 0;
+}
+
+footer {
+    font-family: Sansation;
+    height: 260px;
+    width: 100%;
+    background-color: var(--primaryColor);
+    position: absolute;
+    bottom: 0;
+}
+footer .footer-text {
+    text-align: center;
+    height: 70%;
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.footer-text .text-box {
+    width: 40%;
+    padding: 0 5rem;
+}
+.text-box p {
+    padding-top: .5rem;
+    font-size: 1.2rem;
+    font-family: Sansation-light;
+}
+.footer-text .divider {
+    width: 8px;
+    height: 80%;
+    border-radius: 40px;
+    background-color: var(--backgroundColor);
+}
+#main-btn {
+    font-size: 1.2rem;
+    height: 50px;
+    width: 200px;
+    border: transparent;
+    border-radius: 40px;
+    color: #fff;
+    background-color: #FF0060;
+    transition: all .3s ease-in-out;
+}
+#main-btn:hover {
+    transform: scale(1.1);
+    color: #FFE79B;
+}
+
+@media screen and (min-width: 1600px){
+    header {
+        padding-top: 7rem;
+    }
+    footer {
+        height: 400px;
+    }
+    .wave-bg {
+        top: -50%;
+    }
+    .wave-shadow-bg {
+        top: -60%;
+    }
+    .text-box p {
+        font-size: 2rem;
+    }
+}

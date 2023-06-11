@@ -10,7 +10,7 @@
 }
 .carousel-container {
   position: relative;
-  padding-top: 5rem;
+  padding: 5rem 5rem 0 5rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -101,7 +101,7 @@
   
   background: #8426A6;
   height: 50%;
-  width: 100%;
+  width: 96%;
 }
 .card .img img {
   height: 180px;

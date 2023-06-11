@@ -1,7 +1,6 @@
 <?php
   require './config/conn.php';
-
-  
+  require './config/itemNames.php';
 
 ?>
 <!DOCTYPE html>
@@ -10,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinite Card Slider JavaScript | CodingNepal</title>
+    <title>Shop</title>
     <link rel="stylesheet" href="../style/css/style-shop.css">
     <link rel="stylesheet" href="../style/css/reset.css">
     <link rel="stylesheet" href="../style/css/style-carousel.css">
@@ -47,33 +46,33 @@
           <i id="btn-left" class="fa-solid fa-angle-left"></i>
           <ul class="main-carousel carousel">
             <li class="card">
-              <div class="img"><img src="../assets/image/itemName_adobo.png" alt=""></div>
-              <h2>Chicken Adobo</h2>
+              <div class="img"><img src="../../assets/image/itemName_adobo.png" alt=""></div>
+              <h2> <?php echo($itemArray[0]) ?> </h2>
               <button id="btn-itemName-adobo">$20</button>
             </li>
             <li class="card">
-              <div class="img"><img src="../assets/image/itemName_adobo.png" alt=""></div>
-              <h2>Fried Chicken</h2>
+              <div class="img"><img src="../../assets/image/itemName_porkSisig.png" alt=""></div>
+              <h2> <?php echo($itemArray[1]) ?> </h2>
               <button id="btn-itemName-adobo">$10</button>
             </li>
             <li class="card">
-              <div class="img"><img src="../assets/image/itemName_adobo.png" alt=""></div>
-              <h2>Beef Stew</h2>
+              <div class="img"><img src="../../assets/image/itemName_friedChicken.png" alt=""></div>
+              <h2> <?php echo($itemArray[2]) ?> </h2>
               <button id="btn-itemName-adobo">$40</button>
             </li>
             <li class="card">
-              <div class="img"><img src="../assets/image/itemName_adobo.png" alt=""></div>
-              <h2>Pork Steak</h2>
+              <div class="img"><img src="../../assets/image/itemName_porkSteak.png" alt=""></div>
+              <h2> <?php echo($itemArray[3]) ?> </h2>
               <button id="btn-itemName-adobo">$20</button>
             </li>
             <li class="card">
-              <div class="img"><img src="../assets/image/itemName_adobo.png" alt=""></div>
-              <h2>Ramen</h2>
+              <div class="img"><img src="../../assets/image/itemName_beefStew.png" alt=""></div>
+              <h2> <?php echo($itemArray[4]) ?> </h2>
               <button id="btn-itemName-adobo">$20</button>
             </li>
             <li class="card">
-              <div class="img"><img src="../assets/image/itemName_adobo.png" alt=""></div>
-              <h2>Chicken Curry</h2>
+              <div class="img"><img src="../../assets/image/itemName_lumpia.png" alt=""></div>
+              <h2> <?php echo($itemArray[5]) ?> </h2>
               <button id="btn-itemName-adobo">$20</button>
             </li>
           </ul>
@@ -87,32 +86,32 @@
             <i id="btn-left" class="fa-solid fa-angle-left"></i>
             <ul class="main-carousel-two carousel">
               <li class="card">
-                <div class="img"><img src="../assets/image/itemName_rice.png" alt=""></div>
+                <div class="img"><img src="../../assets/image/itemName_rice.png" alt=""></div>
                 <h2>Chicken Adobo</h2>
                 <span>Sales Manager</span>
               </li>
               <li class="card">
-                <div class="img"><img src="../assets/image/itemName_rice.png" alt=""></div>
+                <div class="img"><img src="../../assets/image/itemName_rice.png" alt=""></div>
                 <h2>Joenas Brauers</h2>
                 <span>Web Developer</span>
               </li>
               <li class="card">
-                <div class="img"><img src="../assets/image/itemName_rice.png" alt=""></div>
+                <div class="img"><img src="../../assets/image/itemName_rice.png" alt=""></div>
                 <h2>Lariach French</h2>
                 <span>Online Teacher</span>
               </li>
               <li class="card">
-                <div class="img"><img src="../assets/image/itemName_rice.png" alt=""></div>
+                <div class="img"><img src="../../assets/image/itemName_rice.png" alt=""></div>
                 <h2>James Khosravi</h2>
                 <span>Freelancer</span>
               </li>
               <li class="card">
-                <div class="img"><img src="../assets/image/itemName_rice.png" alt=""></div>
+                <div class="img"><img src="../../assets/image/itemName_rice.png" alt=""></div>
                 <h2>Kristina Zasiadko</h2>
                 <span>Bank Manager</span>
               </li>
               <li class="card">
-                <div class="img"><img src="../assets/image/itemName_rice.png" alt=""></div>
+                <div class="img"><img src="../../assets/image/itemName_rice.png" alt=""></div>
                 <h2>Donald Horton</h2>
                 <span>App Designer</span>
               </li>
@@ -127,35 +126,35 @@
           <i id="btn-left" class="fa-solid fa-angle-left"></i>
           <ul class="main-carousel-three carousel">
             <li class="card">
-              <div class="img"><img src="../assets/image/itemName_cola.png" alt=""></div>
+              <div class="img"><img src="../../assets/image/itemName_cola.png" alt=""></div>
               <h2>Chicken Adobo</h2>
               <span>Sales Manager</span>
             </li>
             <li class="card">
-              <div class="img"><img src="../assets/image/itemName_cola.png" alt=""></div>
+              <div class="img"><img src="../../assets/image/itemName_cola.png" alt=""></div>
               <h2>Joenas Brauers</h2>
               <span>Web Developer</span>
             </li>
             <li class="card">
-              <div class="img"><img src="../assets/image/itemName_cola.png" alt=""></div>
+              <div class="img"><img src="../../assets/image/itemName_cola.png" alt=""></div>
               <h2>Lariach French</h2>
               <span>Online Teacher</span>
             </li>
             <li class="card">
-              <div class="img"><img src="../assets/image/itemName_cola.png" alt=""></div>
+              <div class="img"><img src="../../assets/image/itemName_cola.png" alt=""></div>
               <h2>James Khosravi</h2>
               <span>Freelancer</span>
             </li>
             <li class="card">
-              <div class="img"><img src="../assets/image/itemName_cola.png" alt=""></div>
+              <div class="img"><img src="../../assets/image/itemName_cola.png" alt=""></div>
               <h2>Kristina Zasiadko</h2>
               <span>Bank Manager</span>
             </li>
             <li class="card">
-              <div class="img"><img src="../assets/image/itemName_cola.png" alt=""></div>
+              <div class="img"><img src="../../assets/image/itemName_cola.png" alt=""></div>
               <h2>Donald Horton</h2>
               <span>App Designer</span>
-            </li>
+            </li> 
           </ul>
           <i id="right" class="fa-solid fa-angle-right"></i>
         </div>
