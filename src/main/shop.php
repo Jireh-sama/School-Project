@@ -1,6 +1,6 @@
 <?php
   require './config/conn.php';
-  require './config/itemNames.php';
+  require './config/itemInventory.php';
 
 ?>
 <!DOCTYPE html>
@@ -47,33 +47,33 @@
           <ul class="main-carousel carousel">
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_adobo.png" alt=""></div>
-              <h2> <?php echo($itemArray[0]) ?> </h2>
-              <button id="btn-itemName-adobo">$20</button>
+              <h2> <?php echo($itemNames[0]) ?> </h2>
+              <button id="btn-itemName-adobo"><?php echo("$".$itemPrices[0]) ?></button>
             </li>
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_porkSisig.png" alt=""></div>
-              <h2> <?php echo($itemArray[1]) ?> </h2>
-              <button id="btn-itemName-adobo">$10</button>
+              <h2> <?php echo($itemNames[1]) ?> </h2>
+              <button id="btn-itemName-adobo"><?php echo("$".$itemPrices[1]) ?></button>
             </li>
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_friedChicken.png" alt=""></div>
-              <h2> <?php echo($itemArray[2]) ?> </h2>
-              <button id="btn-itemName-adobo">$40</button>
+              <h2> <?php echo($itemNames[2]) ?> </h2>
+              <button id="btn-itemName-adobo"><?php echo("$".$itemPrices[2]) ?></button>
             </li>
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_porkSteak.png" alt=""></div>
-              <h2> <?php echo($itemArray[3]) ?> </h2>
-              <button id="btn-itemName-adobo">$20</button>
+              <h2> <?php echo($itemNames[3]) ?> </h2>
+              <button id="btn-itemName-adobo"><?php echo("$".$itemPrices[3]) ?></button>
             </li>
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_beefStew.png" alt=""></div>
-              <h2> <?php echo($itemArray[4]) ?> </h2>
-              <button id="btn-itemName-adobo">$20</button>
+              <h2> <?php echo($itemNames[4]) ?> </h2>
+              <button id="btn-itemName-adobo"><?php echo("$".$itemPrices[4]) ?></button>
             </li>
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_lumpia.png" alt=""></div>
-              <h2> <?php echo($itemArray[5]) ?> </h2>
-              <button id="btn-itemName-adobo">$20</button>
+              <h2> <?php echo($itemNames[5]) ?> </h2>
+              <button id="btn-itemName-adobo"><?php echo("$".$itemPrices[5]) ?></button>
             </li>
           </ul>
           <i id="right" class="fa-solid fa-angle-right"></i>
@@ -87,33 +87,33 @@
             <ul class="main-carousel-two carousel">
               <li class="card">
                 <div class="img"><img src="../../assets/image/itemName_rice.png" alt=""></div>
-                <h2>Chicken Adobo</h2>
-                <span>Sales Manager</span>
+                <h2>RICE </h2>
+                <span>RICE </span>
               </li>
               <li class="card">
                 <div class="img"><img src="../../assets/image/itemName_rice.png" alt=""></div>
-                <h2>Joenas Brauers</h2>
-                <span>Web Developer</span>
+                <h2>RICE </h2>
+                <span>RICE </span>
               </li>
               <li class="card">
                 <div class="img"><img src="../../assets/image/itemName_rice.png" alt=""></div>
-                <h2>Lariach French</h2>
-                <span>Online Teacher</span>
+                <h2>RICE </h2>
+                <span>RICE </span>
               </li>
               <li class="card">
                 <div class="img"><img src="../../assets/image/itemName_rice.png" alt=""></div>
-                <h2>James Khosravi</h2>
-                <span>Freelancer</span>
+                <h2>RICE </h2>
+                <span>RICE </span>
               </li>
               <li class="card">
                 <div class="img"><img src="../../assets/image/itemName_rice.png" alt=""></div>
-                <h2>Kristina Zasiadko</h2>
-                <span>Bank Manager</span>
+                <h2>RICE </h2>
+                <span>RICE </span>
               </li>
               <li class="card">
                 <div class="img"><img src="../../assets/image/itemName_rice.png" alt=""></div>
-                <h2>Donald Horton</h2>
-                <span>App Designer</span>
+                <h2>RICE </h2>
+                <span>RICE </span>
               </li>
             </ul>
             <i id="right" class="fa-solid fa-angle-right"></i>

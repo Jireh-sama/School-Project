@@ -46,14 +46,14 @@ header .header-image img {
 
 .wave-bg {
     position: absolute;
-    top: -75%;
-    height: 200px;
+    top: -55%;
+    height: 150px;
     width: 100%;
 }
 .wave-shadow-bg {
     position: absolute;
-    top: -90%;
-    height: 200px;
+    top: -65%;
+    height: 150px;
     width: 100%;
     z-index: 0;
 }

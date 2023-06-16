@@ -3,11 +3,19 @@
 
   $result = mysqli_query($conn, $query);
   
-  $itemArray = array();
+  $itemNames = array();
+  $itemPrices = array();
+  $itemStocks = array();
   
   if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)){
-      $itemArray[] = $row['name'];
+      $itemNames[] = $row['name'];
+      $itemPrices[] = $row['price'];
+      $itemStocks[] = $row['stock'];
     }
   }
+
+
+
+  
 ?>
