@@ -2,6 +2,16 @@
   require './config/conn.php';
   require './config/itemInventory.php';
 
+  if(!empty($_SESSION['id'])){
+    $id = $_SESSION['id'];
+    $result = mysqli_query($conn, "SELECT * FROM customer_data WHERE id = $id");
+    $userData = mysqli_fetch_assoc($result);
+  }
+  else {
+    header("Location: login.php");
+  }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -20,6 +30,7 @@
     <main class="shop-content-main">
 
 			<header class="navbar">
+
 				<section class="nav-box">
 					<h2>LOGO HERE</h2>
 				</section>
@@ -30,13 +41,15 @@
 						<li><a href="">About</a></li>
 					</ul>
 				</section>
-				<section class="nav-box user-box">
-					<div class="user-name">
-						<h3>User_Name</h2>
-					</div>
-					<div class="user-icon">
-						<i class="fa-regular fa-user"></i>
-					</div>
+				<section class="nav-box">
+          <div class="user-box">
+            <div class="user-name">
+              <h3><?php echo($userData['username']) ?></h2>
+            </div>
+            <div class="user-icon">
+              <i class="fa-regular fa-user"></i>
+            </div>
+          </div>
 				</section>
 			</header>
 
@@ -47,33 +60,33 @@
           <ul class="main-carousel carousel">
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_adobo.png" alt=""></div>
-              <h2> <?php echo($itemNames[0]) ?> </h2>
-              <button id="btn-itemName-adobo"><?php echo("$".$itemPrices[0]) ?></button>
+              <h2> <?php echo($itemNames[0]) ?> </h2>        
+              <button id="<?php echo $itemID[0]?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
             </li>
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_porkSisig.png" alt=""></div>
               <h2> <?php echo($itemNames[1]) ?> </h2>
-              <button id="btn-itemName-adobo"><?php echo("$".$itemPrices[1]) ?></button>
+              <button id="<?php echo $itemID[1]?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
             </li>
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_friedChicken.png" alt=""></div>
               <h2> <?php echo($itemNames[2]) ?> </h2>
-              <button id="btn-itemName-adobo"><?php echo("$".$itemPrices[2]) ?></button>
+              <button id="<?php echo $itemID[2]?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
             </li>
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_porkSteak.png" alt=""></div>
               <h2> <?php echo($itemNames[3]) ?> </h2>
-              <button id="btn-itemName-adobo"><?php echo("$".$itemPrices[3]) ?></button>
+              <button id="<?php echo $itemID[3]?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
             </li>
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_beefStew.png" alt=""></div>
               <h2> <?php echo($itemNames[4]) ?> </h2>
-              <button id="btn-itemName-adobo"><?php echo("$".$itemPrices[4]) ?></button>
+              <button id="<?php echo $itemID[4]?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
             </li>
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_lumpia.png" alt=""></div>
               <h2> <?php echo($itemNames[5]) ?> </h2>
-              <button id="btn-itemName-adobo"><?php echo("$".$itemPrices[5]) ?></button>
+              <button id="<?php echo $itemID[5]?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
             </li>
           </ul>
           <i id="right" class="fa-solid fa-angle-right"></i>
@@ -165,9 +178,9 @@
       </footer>
 
 	  </main>
-
     <script type="module" src="../script/script1.js"></script>
     <script type="module" src="../script/script2.js"></script>
     <script type="module" src="../script/script3.js"></script>
+    <script src="../script/custom.js"></script>
   </body>
 </html>

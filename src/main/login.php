@@ -1,5 +1,5 @@
 <?php
-require 'conn.php';
+require './config/conn.php';
 
 // LOGIN START HERE
 if (isset($_POST['submit'])) {
@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
     if ($password == $row['password']) {
       $_SESSION['login'] = true;
       $_SESSION['id'] = $row['id'];
-      header('location: home.php');
+      header('location: shop.php');
     } else {
       // Write codes here for password not match
     }
@@ -67,7 +67,6 @@ if (isset($_POST['submit'])) {
     </div>
 
   </main>
-  <script src="script.js"></script>
 </body>
 
 </html>
