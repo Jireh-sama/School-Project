@@ -3,13 +3,12 @@ require './config/conn.php';
 
 if (!empty($_SESSION['id'])) {
 
-	$getSelectedItem = mysqli_query($conn, 'SELECT * FROM sitemid');
+	$getSelectedItem = mysqli_query($conn, 'SELECT * FROM selected_item_id');
 	$selectedItem = mysqli_fetch_assoc($getSelectedItem);
 	$itemID = $selectedItem['selectedItemID'];
-
 	$myquery = mysqli_query($conn, "SELECT * FROM item_inventory WHERE id=$itemID");
 	$myitem = mysqli_fetch_assoc($myquery);
-
+	
 } else {
 	header('Location: login.php');
 }

@@ -2,7 +2,7 @@ function run(id){
     const itemID = id;
     const myid = `id=${itemID}`;
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', './config/insertItemID.php', true);
+    xhr.open('POST', './functions/insertSelectedItemID.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = function(){
         console.log(this.responseText);
@@ -19,7 +19,7 @@ function submitOrder(id){
     const itemID = id;
     const myid = `id=${itemID}&quantity=${quantity}`;
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', './config/submitOrder.php', true);
+    xhr.open('POST', './functions/submitOrder.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = function(){
         console.log(this.responseText);
@@ -28,11 +28,27 @@ function submitOrder(id){
         xhr.send(myid);
         setTimeout(()=> {
             window.location.href = "./shop.php";
-        }, 1000);
+        }, 500);
     }else {
         alert('Quantity Not Set');
     }
     
 }
 
+function confirmOrder(){
+    window.location.href = "./confirmOrder.php";
+}
 
+function completeOrder(){
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', './functions/completeOrder.php', 'true');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = function(){
+        console.log(this.responseText);
+    }
+    xhr.send();
+    alert('Order Succesfully');
+    setTimeout(()=>{
+        window.location.href = "./shop.php"
+    }, 500);
+}

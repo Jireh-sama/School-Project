@@ -1,6 +1,6 @@
 <?php
   require './config/conn.php';
-  require './config/itemInventory.php';
+  require './functions/itemInventory.php';
 
   if(!empty($_SESSION['id'])){
     $id = $_SESSION['id'];
@@ -10,8 +10,6 @@
   else {
     header("Location: login.php");
   }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -49,6 +47,7 @@
             <div class="user-icon">
               <i class="fa-regular fa-user"></i>
             </div>
+            <h2><a href="./config/logout.php">logout</a></h2>
           </div>
 				</section>
 			</header>
@@ -174,7 +173,7 @@
       </section>
 					
       <footer class="shop-footer">
-        <button class="btn-send-order" ><p>SEND ORDER</p></button>
+        <button class="btn-send-order" onclick="confirmOrder()"><p>SEND ORDER</p></button>
       </footer>
 
 	  </main>
