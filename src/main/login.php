@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-  // Check for duplicates
+  
   $result = mysqli_query($conn, "SELECT * FROM customer_data WHERE email = '$email'");
   $row = mysqli_fetch_assoc($result);
 
@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
           <input class="form-control-main" id="password" type="password" placeholder="Enter Password" name="password">
         </section>
 
-        <input class="btn btn-primary" type="submit" value="Register" name="submit">
+        <input class="btn btn-primary" type="submit" value="Login" name="submit">
       </form>
 
       <footer>

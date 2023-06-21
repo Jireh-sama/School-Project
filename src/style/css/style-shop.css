@@ -13,7 +13,6 @@ body {
     background-color: var(--backgroundColor);
 }
 
-    
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -36,61 +35,42 @@ body {
     color: var(--backgroundColor);
     text-decoration: none;
 }
-.user-box {
-    padding-right: 100px;
+
+.navbar .menu {
     display: flex;
-    padding: .650rem;
-    gap: 10px;
-    border-radius: 20px;
-    background-color: var(--minColor);
-}
-.user-name {
-    color: var(--secondaryColor);
-    display: flex;
+    justify-content: space-between;
     align-items: center;
+    position: relative;
 }
-.user-icon {
-    height: 40px;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--secondaryColor);
+.menu .user-name {
+    padding-right: .5rem;
+}
+.menu .fa-user {
+    font-size: 1.5rem;
+}
+.menu .user-btn {
+    background-color: #FF0060;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
 }
-.fa-user {
-    color: var(--minColor);
-    font-size: 24px;
-    padding: .5rem;
+.menu .menu-content {
+    width: 100px;
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: -3rem;
+    background: var(--secondaryColor);
 }
-
-
-@media screen and (max-width: 900px) {
-    
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.menu .menu-content a {
+    color: var(--minColor);
+    text-align: center;
+    text-decoration: none;
+}
+.menu:focus-within > .menu-content {
+    display: flex;
+    flex-direction: column;
+}
 
 
 .shop-footer {

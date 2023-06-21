@@ -22,13 +22,13 @@ if (isset($_POST['submit'])) {
     } else {
       // Write codes here for password not match
       echo "
-                    <script>alert('Password Does Not Match')</script>
-                ";
+        <script>alert('Password Does Not Match')</script>
+      ";
     }
   } else {
     echo "
-                <script>alert('User Already Registered')</script>
-            ";
+      <script>alert('User Already Registered')</script>
+    ";
   }
 }
 ?>

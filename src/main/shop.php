@@ -32,6 +32,7 @@
 				<section class="nav-box">
 					<h2>LOGO HERE</h2>
 				</section>
+
 				<section class="nav-box">
 					<ul class="nav-links">
 						<li><a href="">Home</a></li>
@@ -39,17 +40,15 @@
 						<li><a href="">About</a></li>
 					</ul>
 				</section>
-				<section class="nav-box">
-          <div class="user-box">
-            <div class="user-name">
-              <h3><?php echo($userData['username']) ?></h2>
-            </div>
-            <div class="user-icon">
-              <i class="fa-regular fa-user"></i>
-            </div>
-            <h2><a href="./config/logout.php">logout</a></h2>
+
+        <menu class="menu">
+          <h4 class="user-name"><?= htmlspecialchars($userData['username']) ?></h3>
+          <button class="user-btn" ><i class="fa-regular fa-user"></i></button>
+          <div class="menu-content">
+            <a href="#">Profile</a>
+            <a href="./config/logout.php">Logout</a>
           </div>
-				</section>
+        </menu>
 			</header>
 
       <!-- --------------CAROUSEL#1-------------- -->
@@ -59,33 +58,33 @@
           <ul class="main-carousel carousel">
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_adobo.png" alt=""></div>
-              <h2> <?php echo($itemNames[0]) ?> </h2>        
-              <button id="<?php echo $itemID[0]?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
+              <h2> <?= htmlspecialchars($itemNames[0]) ?> </h2>        
+              <button id="<?= ($itemID[0])?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
             </li>
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_porkSisig.png" alt=""></div>
               <h2> <?php echo($itemNames[1]) ?> </h2>
-              <button id="<?php echo $itemID[1]?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
+              <button id="<?= ($itemID[1]) ?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
             </li>
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_friedChicken.png" alt=""></div>
-              <h2> <?php echo($itemNames[2]) ?> </h2>
-              <button id="<?php echo $itemID[2]?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
+              <h2> <?=htmlspecialchars($itemNames[2]) ?> </h2>
+              <button id="<?= ($itemID[2]) ?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
             </li>
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_porkSteak.png" alt=""></div>
-              <h2> <?php echo($itemNames[3]) ?> </h2>
-              <button id="<?php echo $itemID[3]?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
+              <h2> <?=htmlspecialchars($itemNames[3]) ?> </h2>
+              <button id="<?= ($itemID[3]) ?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
             </li>
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_beefStew.png" alt=""></div>
-              <h2> <?php echo($itemNames[4]) ?> </h2>
-              <button id="<?php echo $itemID[4]?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
+              <h2> <?=htmlspecialchars($itemNames[4]) ?> </h2>
+              <button id="<?= ($itemID[4]) ?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
             </li>
             <li class="card">
               <div class="img"><img src="../../assets/image/itemName_lumpia.png" alt=""></div>
-              <h2> <?php echo($itemNames[5]) ?> </h2>
-              <button id="<?php echo $itemID[5]?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
+              <h2> <?=htmlspecialchars($itemNames[5]) ?> </h2>
+              <button id="<?= ($itemID[5]) ?>" class="btn-buy" onclick="run(this.id)">Buy Item</button>
             </li>
           </ul>
           <i id="right" class="fa-solid fa-angle-right"></i>

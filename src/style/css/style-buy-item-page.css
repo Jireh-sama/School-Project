@@ -1,0 +1,60 @@
+@font-face {
+    font-family: Sansation;
+    src: url(../../../assets/font/sansation/Sansation_Bold.ttf);
+  }
+:root{
+    --backgroundColor: #40128B;
+    --primaryColor: #9336B4;
+    --secondaryColor: #8426A6;
+    --minColor: #DD58D6;
+    --btnColor: #FF0060;
+}
+body {
+    font-family: Sansation;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--backgroundColor);
+}
+.buy-item-container {
+    text-align: center;
+}
+.item-details {
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#increment, #decrement {
+    width: 30px;
+    padding: 0;
+    border: transparent;
+    background-color: var(--secondaryColor);
+}
+::placeholder {
+    color: white;
+    opacity: 0.5;
+}
+button, input {
+    color: #fff;
+}
+.item-quantity {
+    text-align: center;
+    border: transparent;
+    background-color: var(--secondaryColor);
+}
+.btn {
+    width: 140px;
+    border-radius: 20px;
+    background-color: #FF0060;
+}
+.input-field {
+    padding-bottom: .5rem;
+}
