@@ -1,6 +1,7 @@
 function run(id) {
   const itemID = id;
   const myid = `id=${itemID}`;
+  console.log(itemID);
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "./functions/insertSelectedItemID.php", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -9,10 +10,25 @@ function run(id) {
   };
   xhr.send(myid);
   setTimeout(() => {
-    window.location.href = "./buyItemPage.php";
+
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        const stringFromPhp = this.responseText;
+        const splittedString = stringFromPhp.split(",");
+        document.querySelector('.btn-set-order').id = splittedString[0];
+        document.getElementById('item-name').innerHTML = splittedString[1];
+        document.getElementById('item-price').innerHTML = splittedString[2];
+      }
+    };
+    xmlhttp.open("GET","./buyItemPage.php",true);
+    xmlhttp.send();
+    myModal.showModal();
   }, 500);
 }
-
+function closeModal(){
+  myModal.close();
+}
 function submitOrder(id) {
   const quantity = parseInt(document.querySelector(".item-quantity").value);
   const itemID = id;

@@ -1,7 +1,7 @@
 <?php
   require './config/conn.php';
   require './functions/itemInventory.php';
-
+ 
   if(!empty($_SESSION['id'])){
     $id = $_SESSION['id'];
     $result = mysqli_query($conn, "SELECT * FROM customer_data WHERE id = $id");
@@ -24,6 +24,24 @@
     <link rel="stylesheet" href="../../assets/fontawesome/css/all.min.css" />
   </head>
   <body>
+
+    <dialog id="myModal">
+        <section class="buy-item-container">
+          <header>
+            <button class="btn-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+          </header>
+          <div class="item-details">
+            <h2 id="item-name"></h2>
+            <p id="item-price"></p>
+          </div>
+          <div class="input-field">
+            <button id="decrement" onclick="decrementQuantity()">-</button>
+            <input class="item-quantity" type="number" placeholder="Quantity" required>
+            <button id="increment" onclick="incrementQuantity()">+</button>
+          </div>
+          <button class="btn-set-order" onclick="submitOrder(this.id)">SUBMIT!</button>
+      </section>
+    </dialog>
 
     <main class="shop-content-main">
 

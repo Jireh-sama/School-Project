@@ -89,3 +89,67 @@ body {
     cursor: pointer;
     background-color: var(--minColor);
 }
+
+/* -----------MODAL----------- */
+#myModal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    color: #fff;
+    background-color: var(--backgroundColor);
+}
+#myModal::backdrop {
+    background: black;
+    opacity: 0.5;
+}
+.btn-close {
+    color: var(--secondaryColor);
+    height: 27px;
+    width: 27px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.buy-item-container {
+    text-align: center;
+}
+.item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#increment, #decrement {
+    width: 30px;
+    padding: 0;
+    border: transparent;
+    background-color: var(--secondaryColor);
+}
+::placeholder {
+    color: white;
+    opacity: 0.5;
+}
+button, input {
+    color: #fff;
+}
+.item-quantity {
+    text-align: center;
+    border: transparent;
+    background-color: var(--secondaryColor);
+}
+.btn-set-order {
+    border: transparent;
+    width: 140px;
+    border-radius: 20px;
+    background-color: #FF0060;
+}
+.input-field {
+    padding-bottom: .5rem;
+}
+/* -----------MODAL----------- */
