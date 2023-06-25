@@ -1,28 +1,26 @@
 <?php
 require './config/conn.php';
-
 if (empty($_SESSION['id'])) {
-
   if (isset($_POST['submit'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    
-    $result = mysqli_query($conn, "SELECT * FROM customer_data WHERE email = '$email'");
-    $row = mysqli_fetch_assoc($result);
-
-    if (mysqli_num_rows($result) > 0) {
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $userQuery = "SELECT * FROM customer_data WHERE email = '$email'";
+    $getUser = mysqli_query($conn, $userQuery);
+    $row = mysqli_fetch_assoc($getUser);
+    if (mysqli_num_rows($getUser) > 0) {
       if ($password == $row['password']) {
         $_SESSION['login'] = true;
         $_SESSION['id'] = $row['id'];
         header('location: shop.php');
       } else {
-        // Write codes here for password not match
+        echo "
+          <script>alert('Incorrect Email or Password');</script>
+        ";
       }
     } else {
       echo "
-                  <script></script>
-              ";
+        <script>alert('No user found');</script>
+      ";
     }
   }
 }else {
@@ -37,9 +35,9 @@ if (empty($_SESSION['id'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="../style/css/style-login-register.css">
-  <link rel="stylesheet" href="../style/bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="../../assets/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="../style/css/style-login-register.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 
 <body>

@@ -60,6 +60,7 @@ body {
   width: 100px;
 }
 .menu .menu-content a {
+  z-index: 1;
   color: var(--minColor);
   text-align: center;
   text-decoration: none;

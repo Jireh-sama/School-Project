@@ -22,18 +22,19 @@ function setSelectedItem(id) {
       document.querySelector(".btn-set-order").id = splittedString[0];
       document.getElementById("item-name").innerHTML = splittedString[1];
       document.getElementById("item-price").innerHTML = splittedString[2] + " Php";
+      console.log(this.responseText);
     }
   };
-  xmlhttp.open("GET", "./buyItemPage.php", true);
+  xmlhttp.open("GET", "./functions/getSelectedItem.php", true);
   xmlhttp.send();
-
-  
   setTimeout(() => {
     modal.showModal(); // OPEN MODAL
   }, 500);
 }
 function closeModal() {
   modal.close();
+  // Clear quantity value on close
+  document.querySelector(".item-quantity").value = ""; 
 }
 function submitOrder(id) {
   const quantity = parseInt(document.querySelector(".item-quantity").value);
@@ -46,10 +47,26 @@ function submitOrder(id) {
     console.log(this.responseText);
   };
   if (quantity > 0) {
-    xhr.send(myid);
-    setTimeout(() => {
-      modal.close();
-    }, 500);
+    // Check number of order since 5 is the max
+    let numOrder = 0;
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        numOrder = parseInt(this.responseText)
+        if (numOrder >= 5) {
+          alert('Currently The Maximum Order Limit is 5');
+        }else {
+          xhr.send(myid);
+          setTimeout(() => {
+            modal.close();
+            // Clear Quantity Value on submit
+            document.querySelector(".item-quantity").value = ""; 
+          }, 500);
+        }
+      }
+    };
+    xmlhttp.open("GET", "./functions/getNumOrder.php", true);
+    xmlhttp.send();
   } else {
     alert("Quantity Not Set");
   }
