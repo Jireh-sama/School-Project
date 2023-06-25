@@ -1,0 +1,91 @@
+@font-face {
+    font-family: Sansation;
+    src: url(../../../assets/font/sansation/Sansation_Bold.ttf);
+  }
+  :root {
+    --backgroundColor: #40128b;
+    --minColor: #dd58d6;
+    --primaryColor: #9336b4;
+    --secondaryColor: #8426a6;
+  }
+  body {
+    font-family: Sansation;
+    background-color: var(--backgroundColor);
+  }
+  .shop-content-main {
+    height: 100vh;
+  }
+  .navbar {
+    align-items: center;
+    background-color: #9336b4;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+  .nav-links {
+    display: flex;
+    font-size: 1.2rem;
+    list-style: none;
+  }
+  .nav-links li {
+    padding: 0 1rem;
+    transition: transform .5s;
+  }
+  .nav-links li:hover {
+    transform: scale(1.2);
+  }
+  .nav-links li a {
+    color: var(--backgroundColor);
+    text-decoration: none;
+    transition: color .5s;
+  }
+  .nav-links li a:hover {
+    color: #fff;
+  }
+  .navbar .menu {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  .menu .user-name {
+    padding-right: 0.5rem;
+  }
+  .menu .fa-user {
+    font-size: 1.5rem;
+  }
+  .menu .user-btn {
+    background-color: #ff0060;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+  }
+  .menu .menu-content {
+    background: var(--secondaryColor);
+    bottom: -3rem;
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 100px;
+  }
+  .menu .menu-content a {
+    color: var(--minColor);
+    text-align: center;
+    text-decoration: none;
+  }
+  .menu:focus-within > .menu-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .welcome-text {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 5rem;
+    text-align: center;
+  }

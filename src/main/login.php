@@ -1,30 +1,33 @@
 <?php
 require './config/conn.php';
 
-// LOGIN START HERE
-if (isset($_POST['submit'])) {
-  $email = $_POST['email'];
-  $password = $_POST['password'];
+if (empty($_SESSION['id'])) {
 
-  
-  $result = mysqli_query($conn, "SELECT * FROM customer_data WHERE email = '$email'");
-  $row = mysqli_fetch_assoc($result);
+  if (isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-  if (mysqli_num_rows($result) > 0) {
-    if ($password == $row['password']) {
-      $_SESSION['login'] = true;
-      $_SESSION['id'] = $row['id'];
-      header('location: shop.php');
+    
+    $result = mysqli_query($conn, "SELECT * FROM customer_data WHERE email = '$email'");
+    $row = mysqli_fetch_assoc($result);
+
+    if (mysqli_num_rows($result) > 0) {
+      if ($password == $row['password']) {
+        $_SESSION['login'] = true;
+        $_SESSION['id'] = $row['id'];
+        header('location: shop.php');
+      } else {
+        // Write codes here for password not match
+      }
     } else {
-      // Write codes here for password not match
+      echo "
+                  <script></script>
+              ";
     }
-  } else {
-    echo "
-                <script></script>
-            ";
   }
+}else {
+  header("Location: shop.php");
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

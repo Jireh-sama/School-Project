@@ -1,4 +1,7 @@
-function run(id) {
+const modal = document.getElementById("buyItemModal"); // Global variable of Modal
+
+function setSelectedItem(id) {
+  //Send Item ID
   const itemID = id;
   const myid = `id=${itemID}`;
   console.log(itemID);
@@ -9,25 +12,28 @@ function run(id) {
     console.log(this.responseText);
   };
   xhr.send(myid);
-  setTimeout(() => {
 
-    const xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        const stringFromPhp = this.responseText;
-        const splittedString = stringFromPhp.split(",");
-        document.querySelector('.btn-set-order').id = splittedString[0];
-        document.getElementById('item-name').innerHTML = splittedString[1];
-        document.getElementById('item-price').innerHTML = splittedString[2];
-      }
-    };
-    xmlhttp.open("GET","./buyItemPage.php",true);
-    xmlhttp.send();
-    myModal.showModal();
+  //Get Item Info
+  const xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      const stringFromPhp = this.responseText;
+      const splittedString = stringFromPhp.split(",");
+      document.querySelector(".btn-set-order").id = splittedString[0];
+      document.getElementById("item-name").innerHTML = splittedString[1];
+      document.getElementById("item-price").innerHTML = splittedString[2] + " Php";
+    }
+  };
+  xmlhttp.open("GET", "./buyItemPage.php", true);
+  xmlhttp.send();
+
+  
+  setTimeout(() => {
+    modal.showModal(); // OPEN MODAL
   }, 500);
 }
-function closeModal(){
-  myModal.close();
+function closeModal() {
+  modal.close();
 }
 function submitOrder(id) {
   const quantity = parseInt(document.querySelector(".item-quantity").value);
@@ -42,15 +48,11 @@ function submitOrder(id) {
   if (quantity > 0) {
     xhr.send(myid);
     setTimeout(() => {
-      window.location.href = "./shop.php";
+      modal.close();
     }, 500);
   } else {
     alert("Quantity Not Set");
   }
-}
-
-function confirmOrder() {
-  window.location.href = "./confirmOrder.php";
 }
 
 function completeOrder() {
@@ -75,7 +77,7 @@ function incrementQuantity() {
 function decrementQuantity() {
   let num = document.querySelector(".item-quantity").value;
   if (num <= 0) {
-    alert('Quantitiy is Zero');
+    alert("Quantitiy is Zero");
   } else {
     num--;
     document.querySelector(".item-quantity").value = num;
