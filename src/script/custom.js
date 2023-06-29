@@ -13,24 +13,26 @@ function setSelectedItem(id) {
   };
   xhr.send(myid);
 
-  //Get Item Info
-  const xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      const stringFromPhp = this.responseText;
-      const splittedString = stringFromPhp.split(",");
-      document.querySelector(".btn-set-order").id = splittedString[0];
-      document.getElementById("item-name").innerHTML = splittedString[1];
-      document.getElementById("item-price").innerHTML = splittedString[2] + " Php";
-      console.log(this.responseText);
-    }
-  };
-  xmlhttp.open("GET", "./functions/getSelectedItem.php", true);
-  xmlhttp.send();
   setTimeout(() => {
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "./functions/getSelectedItem.php", true);
+    xmlhttp.onload = async function(){
+      if(this.status == 200){
+        const stringFromPhp = this.responseText;
+        const splittedString = stringFromPhp.split(",");
+        document.querySelector(".btn-set-order").id = splittedString[0];
+        document.getElementById("item-name").innerHTML = splittedString[1];
+        document.getElementById("item-price").innerHTML = splittedString[2] + " Php";+
+        console.log(this.responseText);
+      } else {
+        alert('Something went wrong in setting the Modal');
+      }
+    }
+    xmlhttp.send();
     modal.showModal(); // OPEN MODAL
-  }, 500);
+  }, 1500);
 }
+
 function closeModal() {
   modal.close();
   // Clear quantity value on close
@@ -61,7 +63,7 @@ function submitOrder(id) {
             modal.close();
             // Clear Quantity Value on submit
             document.querySelector(".item-quantity").value = ""; 
-          }, 500);
+          }, 300);
         }
       }
     };

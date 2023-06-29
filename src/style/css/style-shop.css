@@ -28,10 +28,18 @@ body {
 }
 .nav-links li {
   padding: 0 1rem;
+  transition: transform .5s;
+}
+.nav-links li:hover {
+  transform: scale(1.2);
 }
 .nav-links li a {
   color: var(--backgroundColor);
   text-decoration: none;
+  transition: color .5s;
+}
+.nav-links li a:hover {
+  color: #fff;
 }
 .navbar .menu {
   align-items: center;

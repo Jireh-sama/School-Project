@@ -203,9 +203,7 @@ if (!empty($_SESSION['id'])) {
 
   </main>
 
-  <script type="module" src="../script/script1.js"></script>
-  <script type="module" src="../script/script2.js"></script>
-  <script type="module" src="../script/script3.js"></script>
+  <script type="module" src="../script/carousel-script.js"></script>
   <script src="../script/custom.js"></script>
 </body>
 
