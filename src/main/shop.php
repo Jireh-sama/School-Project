@@ -55,7 +55,7 @@ if (!empty($_SESSION['id'])) {
     <!------HEADER SECTION------>
     <header class="navbar">
       <section class="nav-box">
-        <h2>LOGO HERE</h2>
+        <h2 style="color:white;">Kuya'J</h2>
       </section>
       <section class="nav-box">
         <ul class="nav-links">
