@@ -100,7 +100,7 @@ if (isset($_POST['submit'])) {
         <input class="btn btn-primary" type="submit" value="Register" name="submit">
       </form>
       <footer>
-        <p>Already have an Account? <a href="login.php">Signin</a></p>
+        <p>Already have an Account? <a href="login.php">Sign In</a></p>
       </footer>
     </div>
   </main>

@@ -196,8 +196,8 @@ if (!empty($_SESSION['id'])) {
 
     <!------FOOTER SECTION------>
     <footer class="shop-footer">
-      <button class="btn-send-order">
-        <a href="./confirmOrder.php">SEND ORDER</a>
+      <button class="btn-send-order" onclick="window.location.href='./confirmOrder.php'">
+        SEND ORDER
       </button>
     </footer>
     <!------FOOTER SECTION------>

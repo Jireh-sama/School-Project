@@ -1,9 +1,9 @@
 :root {
-    --backgroundColor: #0079FF;
-    --primaryColor: #00DFA2;
-    --subColor: #F6FA70;
-    --minColor: #FF0060;
-  }
+    --backgroundColor: #40128b;
+    --minColor: #dd58d6;
+    --primaryColor: #9336b4;
+    --secondaryColor: #8426a6;
+}
 * {
     margin: 0;
     padding: 0;
@@ -17,11 +17,12 @@
     background-color: var(--backgroundColor);
 }
 .form-container {
+    color: var(--backgroundColor);
     height: auto;
     width: 30rem;
     box-shadow:0 0 8px 2px #888888;
     border-radius: 30px;
-    background-color: var(--subColor);
+    background-color: var(--minColor);
     overflow: hidden;
 }
 .login-register-header {
@@ -43,7 +44,10 @@ footer {
     padding-top: .5rem;
     text-align: center;
 }
-
+footer p a {
+    text-decoration: none;
+    color: #fff;
+}
 .input-field-section {
     height: auto;
     width: 100%;
