@@ -18,9 +18,9 @@ if (isset($_SESSION['id'])) {
       $orderItemTotal[] = $orderListRow['total'];
     }
   }else {
-    echo "
-        <script>alert('No Order Found on List');</script>
-      ";
+    // echo "
+    //     <script>alert('No Order Found on List');</script>
+    //   ";
   }
 }
 

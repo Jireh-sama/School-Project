@@ -1,78 +1,77 @@
 @font-face {
-    font-family: Sansation;
-    src: url(../../../assets/font/sansation/Sansation_Bold.ttf);
+  font-family: Sansation;
+  src: url(../../../assets/font/sansation/Sansation_Bold.ttf);
 }
 :root{
-    --backgroundColor: #40128B;
-    --primaryColor: #9336B4;
-    --secondaryColor: #8426A6;
-    --minColor: #DD58D6;
-    --btnColor: #FF0060;
+  --backgroundColor: #40128B;
+  --primaryColor: #9336B4;
+  --secondaryColor: #8426A6;
+  --minColor: #DD58D6;
+  --btnColor: #FF0060;
 }
 body {
-    font-family: Sansation;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: Sansation;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 main {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--backgroundColor);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--backgroundColor);
 }
 .table-container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    height: 540px;
-    box-shadow: 0 0 10px 2px black;
-    border-radius: 28px;
-    background-color: var(--secondaryColor);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 540px;
+  box-shadow: 0 0 10px 2px black;
+  border-radius: 28px;
+  background-color: var(--secondaryColor);
 }
 .table-container header {
-    text-align: center;
-   padding-top: .5rem;
+  text-align: center;
+ padding-top: .5rem;
 }
 .table-container footer {
-    text-align: center;
-    padding: 0 0 1rem 0;
+  text-align: center;
+  padding: 0 0 1rem 0;
 }
 .total-value {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 #btn {
-    border: transparent;
-    padding: .5rem 1rem;
-    background: #FF0060;
-    border-radius: 40px;
-    transition: .5s;
+  border: transparent;
+  padding: .5rem 1rem;
+  background: #FF0060;
+  border-radius: 40px;
+  transition: .5s;
 }
 #btn:hover {
-    padding: .5rem 2rem;
+  padding: .5rem 2rem;
 }
 /* ------TABLE------ */
 #table {
-    padding: 0 1rem;
+  padding: 0 1rem;
 }
 #table tr {
-    text-align: center;
-    background-color: var(--primaryColor);
+  text-align: center;
+  background-color: var(--primaryColor);
 }
 #table tr th, td {
 
-    padding: 1rem;
-    background: transparent;
-    width: 150px;
+  padding: 1rem;
+  background: transparent;
+  width: 150px;
 }
 #table tr th{
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 #table tr td{
-    padding: 1rem;
+  padding: 1rem;
 }
 
 /* ------TABLE------ */
-
 

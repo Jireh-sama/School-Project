@@ -37,11 +37,14 @@ if (!empty($_SESSION['id'])) {
         </tr>
         <!-- ----------Column #1---------- -->
         <?php if (!empty($orderItemId[0]) && !empty($orderItemQuantity[0])) : ?>
+          <span style="display: none;">
+          
+          </span>
           <tr>
             <td>
               <?php echo $orderItemName[0] ?>
             </td>
-            <td>
+            <td class="item-quantity" id="<?= ($orderItemId[0]) ?>">
               <?php echo $orderItemQuantity[0] ?>
             </td>
           </tr>
@@ -55,7 +58,7 @@ if (!empty($_SESSION['id'])) {
             <td>
               <?php echo $orderItemName[1] ?>
             </td>
-            <td>
+            <td class="item-quantity" id="<?= ($orderItemId[1]) ?>">
               <?php echo $orderItemQuantity[1] ?>
             </td>
           </tr>
@@ -69,7 +72,7 @@ if (!empty($_SESSION['id'])) {
             <td>
               <?php echo $orderItemName[2] ?>
             </td>
-            <td>
+            <td class="item-quantity" id="<?= ($orderItemId[2]) ?>">
               <?php echo $orderItemQuantity[2] ?>
             </td>
           </tr>
@@ -83,7 +86,7 @@ if (!empty($_SESSION['id'])) {
             <td>
               <?php echo $orderItemName[3] ?>
             </td>
-            <td>
+            <td class="item-quantity" id="<?= ($orderItemId[3]) ?>">
               <?php echo $orderItemQuantity[3] ?>
             </td>
           </tr>
@@ -97,7 +100,7 @@ if (!empty($_SESSION['id'])) {
             <td>
               <?php echo $orderItemName[4] ?>
             </td>
-            <td>
+            <td class="item-quantity" id="<?= ($orderItemId[4]) ?>">
               <?php echo $orderItemQuantity[4] ?>
             </td>
           </tr>
@@ -110,7 +113,7 @@ if (!empty($_SESSION['id'])) {
         <h1 class="total-value">
           Total is: <?= htmlspecialchars($totalSum)?>
         </h1>
-        <button id="btn" name="confirmOrder" onclick="completeOrder()">Confirm <i class="fa-regular fa-paper-plane-top"></i> </button>
+        <button id="btn" name="confirmOrder" onclick="completeOrder()">Confirm</button>
       </footer>
     </section>
   </main>

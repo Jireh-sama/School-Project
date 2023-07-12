@@ -38,6 +38,7 @@ if (!empty($_SESSION['id'])) {
           <h2 id="item-name"></h2>
           <p id="item-price"></p>
         </div>
+        <p class="stock-section">In Stock: <span id="stock"></span></p>
         <div class="input-field">
           <button id="decrement" onclick="decrementQuantity()">-</button>
           <input class="item-quantity" type="number" placeholder="Quantity" required>
@@ -52,6 +53,7 @@ if (!empty($_SESSION['id'])) {
   <!------MODAL SECTION---- -->
 
   <main class="shop-content-main">
+    
     <!------HEADER SECTION------>
     <header class="navbar">
       <section class="nav-box">

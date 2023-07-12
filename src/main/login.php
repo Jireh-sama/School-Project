@@ -62,7 +62,7 @@ if (empty($_SESSION['id'])) {
       </form>
 
       <footer>
-        <p>Don't have an account Yet? <a href="register.php">Signup</a></p>
+        <p>Don't have an account Yet? <a href="register.php">Sign Up</a></p>
       </footer>
 
     </div>

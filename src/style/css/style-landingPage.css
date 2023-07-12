@@ -95,7 +95,7 @@ main .divider {
 }
 .divider .wave-shadow {
     position: absolute;
-    transform: translateY(-120%);
+    transform: translateY(-105%);
     z-index: 1;
 }
 main .web-content {

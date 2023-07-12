@@ -9,7 +9,7 @@
   --secondaryColor: #8426a6;
 }
 body {
-  background-color: var(--backgroundColor);
+  background-color: var(--backgroundColor) !important;
 }
 .navbar {
   align-items: center;
@@ -145,7 +145,14 @@ body {
   padding: .5rem;
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+}
+.item-details h2 {
+  max-width: 190px;
+}
+.stock-section {
+  padding: 0 .5rem;
 }
 .modal-content .input-field {
   text-align: center;

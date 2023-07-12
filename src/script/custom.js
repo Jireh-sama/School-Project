@@ -20,10 +20,11 @@ function setSelectedItem(id) {
       if (this.status == 200) {
         const stringFromPhp = this.responseText;
         const splittedString = stringFromPhp.split(",");
+        const btnID = document.querySelector(".btn-set-order").id = splittedString[0];
         const itemName = document.getElementById("item-name").innerHTML = splittedString[1];
         const itemPrice = document.getElementById("item-price").innerHTML = splittedString[2] + " Php";
-        const btnID = document.querySelector(".btn-set-order").id = splittedString[0];
-        console.log('Setting the Modal');
+        const stock = document.getElementById("stock").innerHTML = splittedString[3];
+        console.log(this.responseText);
         if(this.responseText){
           myResolve(); // when successful
         }else {
@@ -54,6 +55,7 @@ function closeModal() {
   document.querySelector(".item-quantity").value = "";
 }
 function submitOrder(id) {
+  const stock = parseInt(document.getElementById("stock").innerHTML);
   const quantity = parseInt(document.querySelector(".item-quantity").value);
   const itemID = id;
   const myid = `itemId=${itemID}&itemQuantity=${quantity}`;
@@ -67,6 +69,7 @@ function submitOrder(id) {
     // Check number of order since 5 is the max
     let numOrder = 0;
     const xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "./functions/getNumOrder.php", true);
     xmlhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         numOrder = parseInt(this.responseText);
@@ -82,31 +85,60 @@ function submitOrder(id) {
         }
       }
     };
-    xmlhttp.open("GET", "./functions/getNumOrder.php", true);
-    xmlhttp.send();
+    if (quantity > stock) {
+      alert('Cannot Exceed the Stock of the Item');
+    }else {
+      xmlhttp.send();
+    }
   } else {
     alert("Quantity Not Set");
   }
 }
 
 function completeOrder() {
-  const xhr = new XMLHttpRequest();
-  xhr.open("POST", "./functions/completeOrder.php", "true");
-  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhr.onload = function () {
-    console.log(this.responseText);
-  };
-  xhr.send();
-  alert("Order Succesfully");
-  setTimeout(() => {
-    window.location.href = "./shop.php";
-  }, 500);
+  const qty = document.querySelectorAll('.item-quantity');
+
+  let sub_itemQuantity = "itemQuantity="; 
+  let sub_itemId = "itemId="; 
+
+  // get all quantities
+  qty.forEach(element => {
+    sub_itemQuantity += element.innerText + ",";
+  });
+  qty.forEach(element => {
+    sub_itemId += element.id + ",";
+  });
+
+  const itemQuantity = sub_itemQuantity.slice(0, -1);
+  const itemId = sub_itemId.slice(0, -1);
+ 
+  if (qty.length > 0){
+    const expression = `${itemQuantity}&${itemId}`;
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "./functions/completeOrder.php", "true");
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onload = function () {
+      console.log(this.responseText);
+    };
+    xhr.send(expression);
+    alert("Order Succesfully");
+    setTimeout(() => {
+      window.location.href = "./shop.php";
+    }, 500);
+  }else {
+    console.log('Qty not found');
+  }
 }
 
 function incrementQuantity() {
+  const stock = parseInt(document.getElementById("stock").innerHTML);
   let num = document.querySelector(".item-quantity").value;
-  num++;
-  document.querySelector(".item-quantity").value = num;
+  if(num >= stock){
+    alert('nope');
+  }else {
+    num++;
+    document.querySelector(".item-quantity").value = num;
+  }
 }
 function decrementQuantity() {
   let num = document.querySelector(".item-quantity").value;

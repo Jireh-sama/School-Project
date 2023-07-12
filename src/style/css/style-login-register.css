@@ -17,18 +17,15 @@
     background-color: var(--backgroundColor);
 }
 .form-container {
-    color: var(--backgroundColor);
+    color: white;
     height: auto;
     width: 30rem;
-    box-shadow:0 0 8px 2px #888888;
     border-radius: 30px;
-    background-color: var(--minColor);
     overflow: hidden;
 }
 .login-register-header {
     padding: .5rem;
     text-align: center;
-    border-bottom: 1px solid var(--backgroundColor);
 }
 .input-field {
     padding: 1rem 2rem 0 2rem;
