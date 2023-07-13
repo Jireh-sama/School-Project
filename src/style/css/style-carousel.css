@@ -103,7 +103,7 @@
   padding: .2rem 2.4rem;
 }
 .carousel .card .img {
-  
+  pointer-events: none;
   background: #8426A6;
   height: 50%;
   width: 96%;

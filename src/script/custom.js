@@ -127,6 +127,7 @@ function completeOrder() {
     }, 500);
   }else {
     console.log('Qty not found');
+    alert('No Order Found');
   }
 }
 
@@ -148,4 +149,18 @@ function decrementQuantity() {
     num--;
     document.querySelector(".item-quantity").value = num;
   }
+}
+
+function deleteOrder(id){
+  itemID = id;
+  const expression = `itemName=${itemID}`;
+  const xmlhttp = new XMLHttpRequest();
+  xmlhttp.open("POST", "./functions/deleteOrder.php", "true");
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.onload = function () {
+    console.log(this.responseText);
+  };
+  xmlhttp.send(expression);
+  alert("Item Deleted");
+  window.location.href = "./confirmOrder.php";
 }

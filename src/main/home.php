@@ -25,7 +25,7 @@
     <!------HEADER SECTION------>
     <header class="navbar">
       <section class="nav-box">
-        <h2>LOGO HERE</h2>
+        <h2>Kuya'J</h2>
       </section>
       <section class="nav-box">
         <ul class="nav-links">

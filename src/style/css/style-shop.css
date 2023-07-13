@@ -135,11 +135,16 @@ body {
   text-align: center;
 }
 .modal-container footer .btn-set-order {
-  background-color: #ff0060;
+  background-color: chocolate;
   border: transparent;
   border-radius: 20px;
   color: #fff;
   padding: 0.2rem 1rem;
+  cursor: pointer;
+  transition: .5s;
+}
+footer .btn-set-order:hover {
+  background-color: red;
 }
 .modal-container .modal-content .item-details {
   padding: .5rem;

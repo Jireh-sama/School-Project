@@ -10,13 +10,14 @@ if (isset($_POST['submit'])) {
   $confirm_password = $_POST['confirm_password'];
   $phonenumber = $_POST['phonenumber'];
 
+  $realPassword = password_hash($password, PASSWORD_DEFAULT);
   // Check for duplicates
 
   $duplicate = mysqli_query($conn, "SELECT * FROM customer_data WHERE username = '$username' OR email = '$email'");
 
   if (mysqli_num_rows($duplicate) == 0) {
     if ($password == $confirm_password) {
-      $query = "INSERT INTO customer_data VALUES('', '$firstname', '$lastname', '$address', '$email', '$username', '$phonenumber' , '$password')";
+      $query = "INSERT INTO customer_data VALUES('', '$firstname', '$lastname', '$address', '$email', '$username', '$phonenumber' , '$realPassword')";
       mysqli_query($conn, $query);
       header('location: login.php');
     } else {
@@ -104,7 +105,6 @@ if (isset($_POST['submit'])) {
       </footer>
     </div>
   </main>
-  <script src="script.js"></script>
 </body>
 
 </html>

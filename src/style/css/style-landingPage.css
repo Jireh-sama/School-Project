@@ -33,8 +33,6 @@ main {
     background-color: var(--backgroundColor);
     color: white;
 }
-
-
 main header {
     font-family: Sansation;
     height: 10%;
@@ -52,7 +50,7 @@ header .header-logo {
     background-color: var(--minColor);
     border-radius: 20px;
     min-width: 110px;
-    padding: .5rem 1.5rem;
+    padding: .3rem 1.5rem;
     cursor: pointer;
     transition: .5s;
 }
@@ -60,6 +58,7 @@ header .header-logo {
     background-color:#d33acb;
 }
 main .hero-section {
+    padding-top: 1rem;
     height: 40%;
     display: flex;
     justify-content: center;
@@ -68,15 +67,11 @@ main .hero-section {
 .hero-section .hero-text {
     flex: .2 0 300px;
     font-family: Montserrat;
-    font-size: 3.8rem;
+    font-size: 3rem;
     line-height: normal;
 }
-.hero-section .hero-img {
-    flex: .3 0 300px;
-    width: 300px;
-}
-.hero-img img {
-    width: 100%;
+#hero-img {
+    width: 340px;
 }
 main .divider {
     position: relative;
@@ -98,6 +93,9 @@ main .divider {
     transform: translateY(-105%);
     z-index: 1;
 }
+.divider-bottom {
+    transform: rotate(180deg);
+}
 main .web-content {
     background-color: var(--primaryColor);
     height: 30%;
@@ -116,7 +114,7 @@ main .web-content {
 .web-features .feat h4{
     font-family: Sansation;
     font-weight: bolder;
-    font-size: 2.3rem;
+    font-size: 1.9rem;
 }
 .web-features .feat p {
     font-family: Sansation-light;

@@ -63,7 +63,7 @@ if (!empty($_SESSION['id'])) {
         <ul class="nav-links">
           <li><a href="./home.php">Home</a></li>
           <li><a href="./shop.php">Shop</a></li>
-          <li><a href="">About</a></li>
+          <li><a href="https://web.facebook.com/MoonbamiOffcl" target="_blank">About</a></li>
         </ul>
       </section>
       <menu class="menu">

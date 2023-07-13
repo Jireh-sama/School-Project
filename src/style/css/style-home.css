@@ -1,7 +1,7 @@
 @font-face {
-    font-family: Sansation;
-    src: url(../../../assets/font/sansation/Sansation_Bold.ttf);
-  }
+  font-family: Sansation;
+  src: url(../../../assets/font/sansation/Sansation_Bold.ttf);
+}
   :root {
     --backgroundColor: #40128b;
     --minColor: #dd58d6;
@@ -23,6 +23,9 @@
     justify-content: space-between;
     padding: 0.5rem 1rem;
     width: 100%;
+  }
+  .nav-box h2 {
+    color: #fff;
   }
   .nav-links {
     display: flex;

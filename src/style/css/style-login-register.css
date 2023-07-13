@@ -1,3 +1,7 @@
+@font-face {
+    font-family: Sansation;
+    src: url(../../../assets/font/sansation/Sansation_Bold.ttf);
+}
 :root {
     --backgroundColor: #40128b;
     --minColor: #dd58d6;
@@ -8,6 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Sansation;
 }
 .login-register-main {
     height: 100vh;

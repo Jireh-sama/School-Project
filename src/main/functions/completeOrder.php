@@ -3,6 +3,7 @@ require '../config/conn.php';
 
 
 if (isset($_POST['itemQuantity']) && isset($_POST['itemId'])) {
+  $userId = $_SESSION['id'];
   $itemQuantity = explode(",", $_POST['itemQuantity']);
   $itemId = explode(",", $_POST['itemId']);
 
@@ -17,7 +18,7 @@ if (isset($_POST['itemQuantity']) && isset($_POST['itemId'])) {
     }
     $quantitySelector++;
   }
-  mysqli_query($conn, "DELETE FROM order_list");
+  mysqli_query($conn, "DELETE FROM order_list WHERE user_id='$userId'");
   mysqli_query($conn, "DELETE FROM selected_item_id");
 }else {
   echo('itemQuantity or itemId values not found');

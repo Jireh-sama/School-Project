@@ -3,12 +3,15 @@ require './config/conn.php';
 if (empty($_SESSION['id'])) {
   if (isset($_POST['submit'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $password = $_POST['password'];
+
+    $realPassword = password_hash($password, PASSWORD_DEFAULT);
+   
     $userQuery = "SELECT * FROM customer_data WHERE email = '$email'";
     $getUser = mysqli_query($conn, $userQuery);
     $row = mysqli_fetch_assoc($getUser);
     if (mysqli_num_rows($getUser) > 0) {
-      if ($password == $row['password']) {
+      if (password_verify($password, $row['password']) == 1) {
         $_SESSION['login'] = true;
         $_SESSION['id'] = $row['id'];
         header('location: shop.php');
